@@ -1,0 +1,20 @@
+.Header {
+    background: white;
+    width: 100%;
+}
+.topHeader {
+
+}
+.titles {
+    max-width: 120px;
+    padding: 5px 15px;
+}
+.title {
+    font-weight: 600;
+    color:#423189;
+}
+.subtitle {
+    font-size: 12px;
+    vertical-align: alphabetic;
+    color: lightgray;
+}
