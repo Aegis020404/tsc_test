@@ -34,10 +34,12 @@
     background: white;
  color: black;
 }
-.lists {
-
-}
 .list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addCell {
     padding-top: 15px;
     text-align: center;
     height: 70px;
@@ -47,8 +49,10 @@
     cursor: pointer;
     border-radius: 5px;
 }
+.cell {
+}
 
-.list:hover {
+.cell:hover {
     color: black;
     border: 2px solid black;
 }
