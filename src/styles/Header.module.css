@@ -1,13 +1,19 @@
 .Header {
-    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
     width: 100%;
 }
 .topHeader {
-
+    align-items: center;
+    min-height: 50px;
+    background: white;
+    padding: 5px 5px 5px 15px;
+    display: flex;
+    justify-content: space-between;
 }
 .titles {
-    max-width: 120px;
-    padding: 5px 15px;
+    /*max-width: 50%;*/
 }
 .title {
     font-weight: 600;
@@ -18,3 +24,23 @@
     vertical-align: alphabetic;
     color: lightgray;
 }
+.leftPanel {
+    display: flex;
+    align-items: center;
+
+}
+.btnBlack {
+    padding: 5px 6px;
+    color: #767B7D;
+    background: black;
+    border-radius: 5px;
+    transition: all .5s;
+    cursor: pointer;
+}
+.btnBlack:hover {
+    color: white;
+    background: #181717;
+}
+.bookIMG {
+    cursor: pointer;
+} 
