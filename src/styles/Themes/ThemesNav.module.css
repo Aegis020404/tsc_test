@@ -18,6 +18,8 @@
 .nav_selected {
     color: #423189;
     position: relative;
+    transition: all .3s ;
+
 }
 
 .nav_selected:before {

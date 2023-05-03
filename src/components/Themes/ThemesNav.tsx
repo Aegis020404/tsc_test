@@ -1,12 +1,22 @@
 import React from 'react';
 import cl from '../../styles/Themes/ThemesNav.module.css';
 
-const ThemesNav = () => {
+interface props {
+    setNav: React.Dispatch<React.SetStateAction<number>>
+    selectedNav: number
+}
+
+const listNav = ["Галерея", "Шаблоны", "Фон"]
+const ThemesNav: React.FC<props> = ({selectedNav, setNav}: props) => {
     return (
         <div className={cl.ThemesNav}>
-            <div className={cl.nav_selected}>Галерея</div>
-            <div className={cl.nav}>Шаблоны</div>
-            <div className={cl.nav}>Фон</div>
+            {
+                listNav.map((el, idx) => <div key={idx}
+                                              onClick={() => {
+                                                  setNav(idx);
+                                              }}
+                                              className={idx == selectedNav ? cl.nav_selected : cl.nav}>{el}</div>)
+            }
         </div>
     );
 };

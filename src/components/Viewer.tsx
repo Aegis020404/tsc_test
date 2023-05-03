@@ -1,10 +1,9 @@
 import React from 'react';
 import cl from '../styles/Viewer.module.css';
-import {useAppSelector} from "../hooks";
+import {useAppDispatch, useAppSelector} from "../hooks";
 
 const Viewer = () => {
     const state = useAppSelector(state => state.store.currentImage)
-
     return (
         <div className={cl.Viewer}>
             <div className={cl.ViewerWindow}>
