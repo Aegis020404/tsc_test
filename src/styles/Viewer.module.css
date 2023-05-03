@@ -1,0 +1,13 @@
+.Viewer {
+    margin-top: 15px;
+    margin-bottom:15px ;
+    display: flex;
+    justify-content: center;
+
+}
+
+.ViewerWindow {
+    background: white;
+    height: 230px;
+    width: 320px;
+}

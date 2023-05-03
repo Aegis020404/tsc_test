@@ -1,12 +1,16 @@
 import React from 'react';
 import Header from "./components/Header";
 import Viewer from "./components/Viewer";
+import Lists from "./components/Lists";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Viewer/>
+      <div className="container">
+          <Header/>
+          <Viewer/>
+          <Lists/>
+      </div>
     </div>
   );
 }

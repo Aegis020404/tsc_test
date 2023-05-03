@@ -1,0 +1,27 @@
+.Pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-bottom: 20px;
+}
+.pageCounter {
+    color:#423189;
+
+}
+.arrow {
+    font-size: 20px;
+    color: #626262;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #d7d7d7;
+    cursor: pointer;
+    transition: all .3s;
+}
+.arrow:hover {
+    color: black;
+}

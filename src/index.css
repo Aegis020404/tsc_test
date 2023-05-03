@@ -10,6 +10,7 @@ body, html {
   margin: 0 auto;
   background: #F3F6F5;
   width: 375px;
-  height: 280px;
 }
-
+.container {
+  border: 1px solid #efefef;
+}
