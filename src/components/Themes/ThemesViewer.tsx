@@ -5,11 +5,10 @@ import unwrapImg from '../../assets/imgs/unwrap.png';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {addStore, cleaneStore} from "../../store/slices/storeSlice";
 import ModalAddStore from "../ui/ModalAddStore";
-interface props {
-    selectedNav: number
-}
-const ThemesViewer: React.FC<props> = ({selectedNav}: props) => {
+
+const ThemesViewer = () => {
     const state = useAppSelector(state => state.store.list)
+    const selectedNav = useAppSelector(state => state.store.themesNav)
     const [addModal,setAddModal] = useState(false)
     const dispatch = useAppDispatch();
     const addPhoto = () => {
@@ -36,9 +35,9 @@ const ThemesViewer: React.FC<props> = ({selectedNav}: props) => {
                 </div>
             </div>
             <div className={cl.list}>
-                {state.map(el =>
+                {state[selectedNav].map(el =>
                     <div className={cl.cell}>
-                        <img width={100} height={70} src={el.src} alt={el.title}/>
+                        <img key={el.id} width={100} height={70} src={el.src} alt={el.title}/>
                     </div>
                 )}
                 <div className={cl.cell + " " + cl.addCell} onClick={addPhoto}>Добавить фотографию</div>
