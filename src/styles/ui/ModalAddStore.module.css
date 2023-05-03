@@ -1,0 +1,72 @@
+.ModalAddStore {
+    padding: 20px;
+    border-radius: 10px;
+    background: #f1d3d3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+    animation: translating .4s linear;
+    color: black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+.form {
+    margin-bottom: 35px;
+    width: 100%;
+}
+.input {
+    width: 100%;
+    background: #181717;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+.btn {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 80%;
+    background: #181717;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 15px;
+}
+.btn:hover {
+    color: #f1d3d3;
+}
+
+.btn-loader {
+
+}
+
+@keyframes translating {
+    0%   { opacity: 0 }
+    100% { opacity: 1 }
+}
+.err {
+    color: red;
+    font-weight: bolder;
+}
