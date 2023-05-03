@@ -15,6 +15,9 @@ const ThemesViewer = () => {
                     <button className={cl.btn +' '+ cl.unwrap}><img src={unwrapImg} width={10} height={12} alt="unwrap img"/> Развернуть</button>
                 </div>
             </div>
+            <div className={cl.lists}>
+                <div className={cl.list}>Добавить фотографию</div>
+            </div>
         </div>
     );
 };

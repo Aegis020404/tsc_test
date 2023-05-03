@@ -1,14 +1,16 @@
 .ThemesViewer {
     color: gray;
     font-size: 14px;
-    margin-bottom: 5px;
+    padding: 10px;
+    height: 350px;
 }
 
 .management {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
     align-items: center;
+    margin-bottom: 15px;
+
 }
 .btns {
     display: flex;
@@ -31,4 +33,22 @@
 .btn:hover {
     background: white;
  color: black;
+}
+.lists {
+
+}
+.list {
+    padding-top: 15px;
+    text-align: center;
+    height: 70px;
+    width: 100px;
+    border: 1px dashed #ababab;
+    transition: all .3s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.list:hover {
+    color: black;
+    border: 2px solid black;
 }
