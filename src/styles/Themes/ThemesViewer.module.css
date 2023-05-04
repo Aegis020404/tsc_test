@@ -4,7 +4,14 @@
     padding: 10px;
     height: 350px;
 }
-
+.ThemesViewerUnwrapped {
+    transition: all 1s;
+    position: relative;
+    bottom: 355px;
+    background: white;
+    z-index: 20;
+    min-height: 600px !important;
+}
 .management {
     display: flex;
     justify-content: space-between;
@@ -59,7 +66,9 @@
 
 
 .addCell {
-    padding-top: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-top: 25px;
     text-align: center;
     border: 1px dashed #ababab;
     transition: all .3s;

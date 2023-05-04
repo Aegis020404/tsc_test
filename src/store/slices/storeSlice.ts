@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import store from "../index";
 
 export interface Store  {
     id: string;

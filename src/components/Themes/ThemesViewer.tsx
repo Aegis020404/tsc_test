@@ -8,15 +8,16 @@ import ModalAddStore from "../ui/ModalAddStore";
 import themesNav from "./ThemesNav";
 
 const ThemesViewer = () => {
-    const {list,themesNav,currentPag} = useAppSelector(state => state.store)
-    const [addModal, setAddModal] = useState(false)
-    const dispatch = useAppDispatch();
 
+    const {list, themesNav, currentPag} = useAppSelector(state => state.store)
+    const [addModal, setAddModal] = useState(false)
+    const [isWrapper, setWrapper] = useState(false)
+    const dispatch = useAppDispatch();
     const addPhoto = () => {
         setAddModal(true);
     }
     return (
-        <div className={cl.ThemesViewer}>
+        <div className={isWrapper ?  cl.ThemesViewer+" "+cl.ThemesViewerUnwrapped : cl.ThemesViewer}>
             {
                 addModal ? <ModalAddStore setAddModal={setAddModal}/> : ''
             }
@@ -29,27 +30,42 @@ const ThemesViewer = () => {
                     <button className={cl.btn}><img src={backedImg} width={10} height={12} alt="backet img"/> Выбрать
                     </button>
                 </div>
-                <div className={cl.unwrapper}>
+                <div className={cl.unwrapper} onClick={() => {
+                    setWrapper(state => !state);
+                    console.log(isWrapper);
+                }}>
                     <button className={cl.btn + ' ' + cl.unwrap}><img src={unwrapImg} width={10} height={12}
                                                                       alt="unwrap img"/> Развернуть
                     </button>
                 </div>
             </div>
-            <div className={cl.lists}>
-                {/*{list[themesNav].map((el,idx) =>*/}
 
-                {/*)}*/}
-                <div className={cl.cell + " " + cl.addCell} onClick={addPhoto}>Добавить фотографию</div>
-                {
-                    getChunkedArr(list, themesNav).map((arr, aIx) => <div className={cl.list} style={{left:aIx*1000-currentPag*1000+'px'}}  key={aIx}>{
-                        arr.map((item) => (
-                            <div className={cl.cell} key={item.id}>
-                                <img width={100} height={70} src={item.src} alt={item.title}/>
-                            </div>
-                        ))
-                    }</div>)
-                }
-            </div>
+            {isWrapper ?
+                <div className={cl.list}>
+                    {list[themesNav].map((item, idx) => <div className={cl.cell} key={item.id}>
+                        <img width={100} height={70} src={item.src} alt={item.title}/>
+                    </div>)}
+                </div>
+
+                :
+                <div className={cl.lists}>
+
+                    <div className={cl.cell + " " + cl.addCell} onClick={addPhoto}>Добавить фотографию</div>
+                    {
+                        getChunkedArr(list, themesNav).map((arr, aIx) => <div className={cl.list}
+                                                                              style={{left: aIx * 1000 - currentPag * 1000 + 'px'}}
+                                                                              key={aIx}>{
+                            arr.map((item) => (
+                                <div className={cl.cell} key={item.id}>
+                                    <img width={100} height={70} src={item.src} alt={item.title}/>
+                                </div>
+                            ))
+                        }</div>)
+                    }
+                </div>
+            }
+
+
         </div>
     );
 };
