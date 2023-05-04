@@ -4,7 +4,6 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {toggleSubpage} from "../../store/slices/storeSlice";
 
 
-
 const ThemesNav = () => {
     const listNav = ["Галерея", "Шаблоны", "Фон"]
     const dispatch = useAppDispatch()

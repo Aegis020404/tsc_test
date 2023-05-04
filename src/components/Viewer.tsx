@@ -17,7 +17,7 @@ const Viewer:React.FC<props> = ({setHeight, setWidth}: props) => {
     }
     return (
         <div className={cl.Viewer}>
-            <div className={cl.ViewerWindow}>
+            <div className={cl.ViewerWindow + " droppable"}>
                 {state.id ?
                     <img src={state.src} onLoad={handleImageLoad} alt={state.title}/>
                     : ''
