@@ -39,7 +39,6 @@ const ThemesViewer = () => {
                 </div>
                 <div className={cl.unwrapper} onClick={() => {
                     setWrapper(state => !state);
-                    console.log(isWrapper);
                 }}>
                     <button className={cl.btn + ' ' + cl.unwrap}><img src={unwrapImg} width={10} height={12}
                                                                       alt="unwrap img"/> Развернуть
