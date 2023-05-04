@@ -14,7 +14,9 @@ const ThemesNav = () => {
             {
                 listNav.map((el, idx) => <div key={idx}
                                               onClick={() => {
-                                                  toggleSubpage(idx);
+
+                                                  dispatch(toggleSubpage(idx));
+
                                               }}
                                               className={idx == state ? cl.nav_selected : cl.nav}>{el}</div>)
             }
