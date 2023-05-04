@@ -21,6 +21,8 @@ const ModalAddStore: React.FC<props> = ({setAddModal}: props) => {
             setErr(3)
         } else if (!success) {
             setErr(2);
+        } else if (title.length >=25) {
+            setErr(4);
         } else {
             dispatch(addStore({src, title}));
             setAddModal(false);
@@ -46,6 +48,9 @@ const ModalAddStore: React.FC<props> = ({setAddModal}: props) => {
                         : ""}
                     {err === 2 ?
                         <div className={cl.err}> Неверная ссылка на изображение</div>
+                        : ""}
+                    {err === 4 ?
+                        <div className={cl.err}> Название должно быть меньше 25 символов</div>
                         : ""}
                 </div>
                 <div className={cl.form}>
