@@ -8,14 +8,18 @@ body, html {
 }
 .App {
   overflow: hidden;
-
   border-radius: 10px;
   position: relative;
   padding: 15px 10px;
   margin: 0 auto;
   background: #F3F6F5;
   width: 375px;
-
+}
+@media (max-width: 375px) {
+  .App {
+    width: auto;
+    overflow: hidden;
+  }
 }
 .container {
   border: 1px solid #efefef;
