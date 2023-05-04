@@ -36,8 +36,8 @@ const ThemesViewer = () => {
             </div>
             <div className={cl.list}>
                 {state[selectedNav].map(el =>
-                    <div className={cl.cell}>
-                        <img key={el.id} width={100} height={70} src={el.src} alt={el.title}/>
+                    <div key={el.id} className={cl.cell}>
+                        <img width={100} height={70} src={el.src} alt={el.title}/>
                     </div>
                 )}
                 <div className={cl.cell + " " + cl.addCell} onClick={addPhoto}>Добавить фотографию</div>
