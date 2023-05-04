@@ -1,13 +1,15 @@
 * {
   box-sizing: border-box;
   transition: all .3s;
-  overflow: visible;
 }
 body, html {
   padding: 0;
   margin: 0;
 }
 .App {
+  overflow: hidden;
+
+  border-radius: 10px;
   position: relative;
   padding: 15px 10px;
   margin: 0 auto;

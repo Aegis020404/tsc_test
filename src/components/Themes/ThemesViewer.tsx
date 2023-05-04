@@ -3,23 +3,27 @@ import cl from '../../styles/Themes/ThemesViewer.module.css';
 import backedImg from '../../assets/imgs/backed.png';
 import unwrapImg from '../../assets/imgs/unwrap.png';
 import {getChunkedArr, useAppDispatch, useAppSelector} from "../../hooks";
-import {addStore, cleaneStore, Store} from "../../store/slices/storeSlice";
+import {cleaneStore} from "../../store/slices/storeSlice";
 import ModalAddStore from "../ui/ModalAddStore";
-import themesNav from "./ThemesNav";
+import ModalProductAdd from "../ui/ModalProductAdd";
 
 const ThemesViewer = () => {
 
     const {list, themesNav, currentPag} = useAppSelector(state => state.store)
     const [addModal, setAddModal] = useState(false)
     const [isWrapper, setWrapper] = useState(false)
+    const [isModalSuccessAdded, setModalSuccessAdded] = useState(false)
     const dispatch = useAppDispatch();
     const addPhoto = () => {
         setAddModal(true);
     }
     return (
-        <div className={isWrapper ?  cl.ThemesViewer+" "+cl.ThemesViewerUnwrapped : cl.ThemesViewer}>
+        <div className={isWrapper ? cl.ThemesViewer + " " + cl.ThemesViewerUnwrapped : cl.ThemesViewer}>
             {
                 addModal ? <ModalAddStore setAddModal={setAddModal}/> : ''
+            }
+            {
+                isModalSuccessAdded ? <ModalProductAdd setModalSuccessAdded={setModalSuccessAdded}/> : ''
             }
             <div className={cl.management}>
                 <div className={cl.btns}>
@@ -27,7 +31,9 @@ const ThemesViewer = () => {
                         dispatch(cleaneStore())
                     }}>× Очистить
                     </button>
-                    <button className={cl.btn}><img src={backedImg} width={10} height={12} alt="backet img"/> Выбрать
+                    <button className={cl.btn} onClick={() => {
+                        setModalSuccessAdded(true);
+                    }}><img src={backedImg} width={10} height={12} alt="backet img"/> Выбрать
                     </button>
                 </div>
                 <div className={cl.unwrapper} onClick={() => {

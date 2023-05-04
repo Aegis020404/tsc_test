@@ -12,7 +12,7 @@ const Header = () => {
                     <div className={cl.subtitle}>Размер 400x280 <br/> мм (в развороте)</div>
                 </div>
                 <div className={cl.leftPanel}>
-                    <button className={cl.btnBlack}>В корзину</button>
+                    <a target="_blank" href="https://wow2print.com/"  className={cl.btnBlack}>В корзину</a>
                     <Burger/>
                 </div>
             </div>

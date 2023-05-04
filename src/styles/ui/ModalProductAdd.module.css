@@ -1,0 +1,41 @@
+.ModalProductAdd {
+}
+.container {
+    text-align: center;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    right: 20px;
+    height: 50%;
+    z-index: 1000;
+    background: white;
+}
+.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+.btn {
+
+}
+
+.blackScreen {
+    z-index: 200;
+    border-radius: 10px;
+    background: #252222;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: translating .4s linear;
+    color: black;
+    opacity: .8;
+}

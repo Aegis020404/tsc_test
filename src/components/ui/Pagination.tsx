@@ -7,16 +7,18 @@ const Pagination = () => {
     const dispatch = useAppDispatch();
 
     const {currentPag,list,themesNav} = useAppSelector((state) => state.store)
-    console.log(currentPag)
     return (
         <div className={cl.Pagination}>
             <div className={cl.arrow } onClick={() => {
-                if(!currentPag) return
+                if(currentPag <= 0) return
                 dispatch(minusCurrentPag())
             }}>☚</div>
             <div className={cl.pageCounter}>Cтраница {currentPag+1}</div>
             <div className={cl.arrow} onClick={() => {
-                if(currentPag == getChunkedArr(list, themesNav).length -1) {
+                console.log(currentPag)
+                console.log(getChunkedArr(list, themesNav).length -1)
+
+                if(currentPag >= getChunkedArr(list, themesNav).length -1) {
                     return
                 }
                 dispatch(plusCurrentPag())
