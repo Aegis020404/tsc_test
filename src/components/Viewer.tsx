@@ -1,6 +1,6 @@
 import React from 'react';
 import cl from '../styles/Viewer.module.css';
-import {useAppDispatch, useAppSelector} from "../hooks";
+import { useAppSelector} from "../hooks";
 
 
 interface props {

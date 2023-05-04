@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import cl from '../../styles/Themes/ThemesViewer.module.css';
 import backedImg from '../../assets/imgs/backed.png';
 import unwrapImg from '../../assets/imgs/unwrap.png';
 import {getChunkedArr, useAppDispatch, useAppSelector} from "../../hooks";
-import {addCurrentImage, cleaneStore} from "../../store/slices/storeSlice";
+import { cleaneStore} from "../../store/slices/storeSlice";
 import ModalAddStore from "../ui/ModalAddStore";
 import ModalProductAdd from "../ui/ModalProductAdd";
 import Image_d from "../ui/Image_d";
@@ -48,7 +48,7 @@ const ThemesViewer = () => {
 
             {isWrapper ?
                 <div className={cl.list}>
-                    {list[themesNav].map((item, idx) => <div className={cl.cell} key={item.id}>
+                    {list[themesNav].map((item) => <div className={cl.cell} key={item.id}>
                         <img width={100} height={70} src={item.src} alt={item.title}/>
                     </div>)}
                 </div>

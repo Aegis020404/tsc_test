@@ -1,4 +1,4 @@
-import React, {Dispatch, FormEvent, SetStateAction, useState} from 'react';
+import React, {FormEvent, useState} from 'react';
 import cl from '../../styles/ui/ModalAddStore.module.css'
 import {useAppDispatch} from "../../hooks";
 import {addStore} from "../../store/slices/storeSlice";
