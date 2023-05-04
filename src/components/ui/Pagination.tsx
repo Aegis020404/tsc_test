@@ -15,9 +15,6 @@ const Pagination = () => {
             }}>☚</div>
             <div className={cl.pageCounter}>Cтраница {currentPag+1}</div>
             <div className={cl.arrow} onClick={() => {
-                console.log(currentPag)
-                console.log(getChunkedArr(list, themesNav).length -1)
-
                 if(currentPag >= getChunkedArr(list, themesNav).length -1) {
                     return
                 }

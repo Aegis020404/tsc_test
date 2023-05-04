@@ -1,5 +1,4 @@
 import React, {useRef, useState} from 'react';
-import {current} from "@reduxjs/toolkit";
 import {addCurrentImage, Store} from "../../store/slices/storeSlice";
 import {useAppDispatch} from "../../hooks";
 
@@ -53,7 +52,6 @@ const Image_d: React.FC<ImageProps> = ({item}) => {
             const elemBellow = document.elementFromPoint(e.clientX, e.clientY);
             img.hidden = false
             if (!elemBellow) return;
-
             const droppableBellow = elemBellow.closest(".droppable");
             if (currentDroppable !== droppableBellow) {
                 if (currentDroppable) {
@@ -68,7 +66,8 @@ const Image_d: React.FC<ImageProps> = ({item}) => {
         document.addEventListener("mousemove", onMouseMove);
         img.onmouseup = function () {
             if (currentDroppable) {
-                console.log("working")
+                dispatch(addCurrentImage(item));
+                leaveDroppable(currentDroppable);
             }
             father?.append(img);
             setRender(state => !state);
@@ -80,9 +79,6 @@ const Image_d: React.FC<ImageProps> = ({item}) => {
     }
     return (
             <img
-                onClick={() => {
-                    console.log("suka");
-                }}
                 alt={item.title}
                 src={item.src}
                 width={100} height={70}
