@@ -5,11 +5,12 @@
     height: 350px;
 }
 .ThemesViewerUnwrapped {
-    transition: all 1s;
+    z-index: 1000;
+    transition: all 0.1s;
+    /*transition: all 1s;*/
     position: relative;
-    bottom: 355px;
+    bottom: 455px;
     background: white;
-    z-index: 20;
     min-height: 600px !important;
 }
 .management {

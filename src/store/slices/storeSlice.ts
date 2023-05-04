@@ -31,8 +31,7 @@ if (!localStorage.getItem("list")) {
     localStorage.setItem("list", JSON.stringify(spaceState));
 }
 // @ts-ignore
-const initialState: StoreState = JSON.parse(localStorage.getItem("list"))
-
+const initialState: StoreState = {...JSON.parse(localStorage.getItem("list")),currentPag:0 }
 const storeSlice = createSlice({
     name: "store",
     initialState,
@@ -53,9 +52,10 @@ const storeSlice = createSlice({
                 title: "",
             };
             addLocalstorage(state)
+            state.currentPag = 0;
         },
         toggleSubpage(state, action: PayloadAction<number>) {
-            state.currentPag = 0
+            state.currentPag = 0;
             state.themesNav = action.payload;
         },
         plusCurrentPag(state) {

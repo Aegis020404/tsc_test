@@ -10,7 +10,7 @@ interface props {
 const ModalAddStore: React.FC<props> = ({setAddModal}: props) => {
     const dispatch = useAppDispatch()
     const [src, setSrc] = useState('https://i.pinimg.com/736x/e6/1d/40/e61d40897cc347e98fd56849ecfe4208.jpg');
-    const [title, setTitle] = useState('https://i.pinimg.com/736x/e6/1d/40/e61d40897cc347e98fd56849ecfe4208.jpg');
+    const [title, setTitle] = useState('My project');
     const [err, setErr] = useState(0);
     const [success, setSuccess] = useState(0);
     const addImage = (e: FormEvent<HTMLFormElement>) => {

@@ -6,6 +6,7 @@ import {getChunkedArr, useAppDispatch, useAppSelector} from "../../hooks";
 import {addCurrentImage, cleaneStore} from "../../store/slices/storeSlice";
 import ModalAddStore from "../ui/ModalAddStore";
 import ModalProductAdd from "../ui/ModalProductAdd";
+import Image from "../ui/Image";
 
 const ThemesViewer = () => {
 
@@ -63,9 +64,10 @@ const ThemesViewer = () => {
                                                                               key={aIx}>{
                             arr.map((item) => (
                                 <div className={cl.cell} key={item.id}>
-                                    <img onClick={() => {
-                                        dispatch(addCurrentImage(item))
-                                    }} width={100} height={70} src={item.src} alt={item.title}/>
+                                    {/*<img onClick={() => {*/}
+                                    {/*    dispatch(addCurrentImage(item))*/}
+                                    {/*}} width={100} height={70} src={item.src} alt={item.title}/>*/}
+                                    <Image src={item.src}/>
                                 </div>
                             ))
                         }</div>)
