@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import store from "../index";
 
-type Store = {
+export interface Store  {
     id: string;
     src: string;
     title: string;
@@ -10,9 +10,12 @@ type StoreState = {
     list: [Store[],Store[],Store[]];
     currentImage: Store;
     themesNav:number;
+    currentPag:number;
+
 }
 const spaceState:StoreState = {
     themesNav:0,
+    currentPag:1,
     list: [[],[],[]],
     currentImage: {
         id: '',
@@ -54,9 +57,16 @@ const storeSlice = createSlice({
         },
         toggleSubpage(state, action: PayloadAction<number>) {
             state.themesNav = action.payload;
-        }
+        },
+        plusCurrentPag(state) {
+            state.currentPag++;
+        },
+        minusCurrentPag(state) {
+            state.currentPag--;
+        },
     }
 })
 
-export const {addStore,cleaneStore,toggleSubpage} = storeSlice.actions;
+export const {addStore,cleaneStore,toggleSubpage,minusCurrentPag,plusCurrentPag} = storeSlice.actions;
 export default storeSlice.reducer;
+

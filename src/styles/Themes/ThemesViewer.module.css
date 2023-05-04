@@ -34,7 +34,14 @@
     background: white;
  color: black;
 }
+.lists {
+}
 .list {
+    left: 0;
+    right: 0;
+    position: absolute;
+    width: 333px;
+    height: 156px;
     margin: 0 auto;
     gap:16px;
     display: flex;
