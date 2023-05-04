@@ -70,3 +70,19 @@
     color: red;
     font-weight: bolder;
 }
+.close {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+.close:hover {
+    color: red;
+    background: white;
+}

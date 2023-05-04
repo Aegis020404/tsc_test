@@ -27,11 +27,13 @@ const ModalAddStore: React.FC<props> = ({setAddModal}: props) => {
         }
         return false;
     }
-
+    const toClose = () => {
+        setAddModal(false);
+    }
     return (
         <div className={cl.ModalAddStore}>
             <form  onSubmit={addImage}>
-
+            <div className={cl.close} onClick={toClose}>×</div>
             <div className={cl.container}>
                 <div className={cl.form}>
                     <div className={cl.title}>Добавьте ссылку на изображение</div>

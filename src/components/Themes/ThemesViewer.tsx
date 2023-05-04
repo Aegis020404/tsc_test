@@ -36,7 +36,7 @@ const ThemesViewer = () => {
             </div>
             <div className={cl.list}>
                 {state[selectedNav].map(el =>
-                    <div key={el.id} className={cl.cell}>
+                    <div key={el.id} style={{}} className={cl.cell}>
                         <img width={100} height={70} src={el.src} alt={el.title}/>
                     </div>
                 )}
