@@ -15,7 +15,7 @@ type StoreState = {
 }
 const spaceState:StoreState = {
     themesNav:0,
-    currentPag:1,
+    currentPag:0,
     list: [[],[],[]],
     currentImage: {
         id: '',
@@ -56,6 +56,7 @@ const storeSlice = createSlice({
             addLocalstorage(state)
         },
         toggleSubpage(state, action: PayloadAction<number>) {
+            state.currentPag = 0
             state.themesNav = action.payload;
         },
         plusCurrentPag(state) {
