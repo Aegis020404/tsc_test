@@ -64,9 +64,12 @@ const storeSlice = createSlice({
         minusCurrentPag(state) {
             state.currentPag--;
         },
+        addCurrentImage(state,action:PayloadAction<Store>) {
+            state.currentImage = action.payload;
+        }
     }
 })
 
-export const {addStore,cleaneStore,toggleSubpage,minusCurrentPag,plusCurrentPag} = storeSlice.actions;
+export const {addStore,cleaneStore,toggleSubpage,minusCurrentPag,plusCurrentPag,addCurrentImage} = storeSlice.actions;
 export default storeSlice.reducer;
 
